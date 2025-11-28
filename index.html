@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Detector de Emociones</title>
+<style>
+body{background:#000;color:#0f0;font-family:system-ui,Segoe UI,Helvetica,Arial;display:flex;flex-direction:column;align-items:center;padding:18px}
+h1{color:#0f0;font-size:36px;margin:6px 0}
+#controls{margin:12px}
+video, canvas{border:3px solid #0f0;background:#111;max-width:720px;width:80%;height:auto}
+button{padding:8px 14px;font-size:16px;cursor:pointer}
+#log{white-space:pre-wrap;max-width:720px;width:80%;margin-top:10px;color:#afa}
+#emotion-box{font-size:22px;padding:8px 12px;background:rgba(0,0,0,0.6);border:2px solid #0f0}
+</style>
+</head>
+<body>
+  <h1>Detector de Emociones</h1>
+  <div id="controls">
+    <button id="startBtn">Iniciar cámara</button>
+    <button id="stopBtn" disabled>Detener</button>
+    <button id="analyzeBtn" disabled>Analizar ahora</button>
+    <button id="downloadModelsBtn">Descargar pesos (models)</button>
+  </div>
+  <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;justify-content:center">
+    <div>
+      <video id="video" autoplay muted playsinline width="640" height="480"></video>
+      <div id="emotion-box">Emoción: —  | Confianza: —%</div>
+    </div>
+    <div>
+      <canvas id="overlay" width="640" height="480"></canvas>
+    </div>
+  </div>
+  <div style="color:#ffb86b;margin-top:8px;max-width:720px;width:80%">
+    <strong>Nota:</strong> Este HTML carga <em>face-api.js</em> desde CDN. Necesitas descargar la carpeta <code>models/</code> junto a este archivo.
+    Haz clic en <strong>"Descargar pesos (models)"</strong> y guarda los archivos en una carpeta llamada <code>models</code> (misma carpeta que este HTML).
+  </div>
+  <div id="log"></div>
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

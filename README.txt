@@ -2,7 +2,7 @@ Detector de Emociones (Web)
 Contenido del ZIP:
  - index.html
  - app.js
- - README.txt (este archivo)
+ - README.txt (este archivo)-
 
 Uso recomendado (servidor local):
  1) Extrae el ZIP en una carpeta.
